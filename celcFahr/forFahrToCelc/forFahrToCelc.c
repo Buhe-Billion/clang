@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+#define LOWERLIMIT 0
+#define UPPERLIMIT 300
+#define STEPSIZE 20
+
 //print Fahr-Celc Tabell
 int main(int argc, char const *argv[])
 {
