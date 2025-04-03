@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
   //this loop stops at fahr = 20; and I thought loops terminated at negative
   //numbers, but it seems to be that they terminate at the 1st non positive number!!
   //for (fahr = UPPERLIMIT; fahr ; fahr -= 20)
-  for (fahr = UPPERLIMIT; fahr >= 0; fahr -= 20) 
+  for (fahr = UPPERLIMIT; fahr >= 0; fahr -= STEPSIZE) 
     printf("%3d %6.1f\n",fahr, (5.0/9.0)*(fahr-32) );
 
 }
