@@ -6,7 +6,7 @@
 int main(int argc, char const *argv[])
 {
 
-double nc;
+double nc; //double float can handle numbers bigger than long
 
 for (nc = 0; getchar() != EOF; ++nc)
   ;
