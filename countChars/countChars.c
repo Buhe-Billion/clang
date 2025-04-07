@@ -6,7 +6,7 @@
 int main ()
 {
 
-long nc
+long nc;
 
 nc = 0;
 
