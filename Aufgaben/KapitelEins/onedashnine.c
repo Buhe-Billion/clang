@@ -20,7 +20,7 @@ while ( (character = getchar()) != EOF )
   previousCharacter = character;
 }
 */
-//kurzgesagt
+//kurzgesagt: shorter and simpler
 {
   if (character != ' ' || previousCharacter != ' ')
     putchar(character);
