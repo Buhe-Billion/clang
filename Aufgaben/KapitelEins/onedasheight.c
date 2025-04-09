@@ -11,13 +11,13 @@ tabCount = newLineCount = blankCount = 0;   //initiate with 0
 
 while ( (character = getchar() != EOF) )
 {
-  if character == ' '
+  if (character == ' ')
     ++blankCount;
 
-  if character == '\n'
+  if (character == '\n')
     ++newLineCount;
 
-  if character == '\t'
+  if (character == '\t')
     ++tabCount;
 }
 
