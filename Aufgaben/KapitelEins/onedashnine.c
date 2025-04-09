@@ -10,12 +10,20 @@ long character, previousCharacter;
 
 previousCharacter = CHARACTERSEED;
 while ( (character = getchar()) != EOF )
+/*
 {
   if (character != ' ')
     putchar(character);
   else if (character == ' ')
     if (previousCharacter != ' ')
       putchar(character);
+  previousCharacter = character;
+}
+*/
+
+{
+  if (character != ' ' || previousCharacter != ' ')
+    putchar(character);
   previousCharacter = character;
 }
 
