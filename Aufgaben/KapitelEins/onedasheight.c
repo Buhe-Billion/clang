@@ -9,7 +9,7 @@ long character, blankCount, newLineCount, tabCount;  //declarations
 
 tabCount = newLineCount = blankCount = 0;   //initiate with 0
 
-while ( (character = getchar() != EOF) )
+while ( (character = getchar()) != EOF )
 {
   if (character == ' ')
     ++blankCount;
