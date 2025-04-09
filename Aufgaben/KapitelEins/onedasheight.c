@@ -14,10 +14,10 @@ while ( (character = getchar()) != EOF )
   if (character == ' ')
     ++blankCount;
 
-  if (character == '\n')
+  else if (character == '\n')
     ++newLineCount;
 
-  if (character == '\t')
+  else if (character == '\t')
     ++tabCount;
 }
 
