@@ -15,6 +15,6 @@ while ((character = getchar()) != EOF)
     printf("\\b");
   else if (character == '\t')
     printf("\\t");
-  else putchar(c);
+  else putchar(character);
 
 }
