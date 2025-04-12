@@ -26,7 +26,7 @@ while ((c = getchar()) != EOF)
   if (c == ' ' || c == '\n' || c == '\t')
     state = OUT;
 
-  else if (!state)
+  else if (!state) //MVP Line.
   {
     state = IN;
     ++nw;
