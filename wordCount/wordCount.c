@@ -34,5 +34,5 @@ while ((c = getchar()) != EOF)
 }
 
 printf("LineCount: %ld \t WordCount: %ld \t CharacterCount: %ld \n", nl, nw, nc);
-
+//it works beautifully!!!!
 }
