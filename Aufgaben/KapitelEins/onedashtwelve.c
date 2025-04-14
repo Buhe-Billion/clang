@@ -14,7 +14,7 @@ state = OUT;
 while ((character = getchar()) != EOF)
 {
 
-  if ( c == ' ' || c == '\n' || c == '\t' )
+  if ( character == ' ' || character == '\n' || character == '\t' )
   {
     if (state)
     {
@@ -26,10 +26,10 @@ while ((character = getchar()) != EOF)
   else if (!state)
   {
     state == IN;
-    putchar(c);
+    putchar(character);
   }
 
-  else putchar(c);
+  else putchar(character);
 }
 
 }
