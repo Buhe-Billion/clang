@@ -25,7 +25,7 @@ while ((character = getchar()) != EOF)
 
   else if (!state)
   {
-    state == IN;
+    state = IN;
     putchar(character);
   }
 
