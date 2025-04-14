@@ -9,7 +9,8 @@
 int main(int argc, char const *argv[])
 {
 
-long character, state;
+long character, state;    //I chose long for a wide data type;
+                          //definitely not necessary
 
 state = OUT;
 while ((character = getchar()) != EOF)
