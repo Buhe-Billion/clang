@@ -5,6 +5,7 @@
 #define IN 1
 #define OUT 0
 
+//Get input and print one word per line from it.
 int main(int argc, char const *argv[])
 {
 
@@ -18,18 +19,18 @@ while ((character = getchar()) != EOF)
   {
     if (state)
     {
-      putchar('\n');
+      putchar('\n'); //finish the word with a line termination
       state = OUT;
     }
   }
 
   else if (!state)
   {
-    state = IN;
+    state = IN;             //here we're at the beginning of a word
     putchar(character);
   }
 
-  else putchar(character);
+  else putchar(character);    //here, we're inside of a word
 }
 
 }
