@@ -75,5 +75,5 @@ for (i = 1; i < MAXWORD; ++i)
 }
 
 if (overFlw > 0)
-  printf("There are %ld word >= %ld \n", overFlw, MAXWORD);
+  printf("There are %ld words >= %ld \n", overFlw, MAXWORD);
 }
