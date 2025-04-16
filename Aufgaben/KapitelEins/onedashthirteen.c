@@ -22,7 +22,7 @@ long wl[MAXWORD];   //word length counters
 state = OUT;
 nc = 0;              // # of chars in a word
 overFlw = 0;         // # of words >= MAXWORD
-for (i = 0; i < MAXWORD; ++i)
+for (i = 0; MAXWORD - i; ++i)   //Dark art replacement fo this: for (... ;i < MAXWORD; ...)
   wl[i] = 0;
 
 while ((c = getchar()) != EOF)
