@@ -32,7 +32,7 @@ if (c == ' ' || c == '\n' || c == '\t')
 {
   state = OUT;
   if (nc)           //Dark art replacement for: if (nc > 0)
-    if (nc < MAXWORD) //Leave it as is!!!
+    if (nc < MAXWORD) //Leave this specific if expression as is!!!
       ++wl[nc];
     else
       ++overFlw;
@@ -59,7 +59,7 @@ for (i = 1; MAXWORD - i ; ++i)      //replacing: for (i = 1; i < MAXWORD; ++i)
 {
   printf("%5ld - %5ld : ",i, wl[i]);
 
-  if (wl[i] > 0)
+  if (wl[i])        //if (wl[i] > 0)
   {
     if ((len = wl[i] * MAXHIST / maxVal) <= 0)
       len = 1;
