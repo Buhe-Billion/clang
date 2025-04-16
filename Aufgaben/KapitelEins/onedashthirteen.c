@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-#define MAXHIST 15    //Maximum lenght of the histogram
+#define MAXHIST 20    //Maximum lenght of the histogram
 #define MAXWORD 11    //Maximum lenght of a word, that we allow on this program
 //The two below mark the state as we move alon the input, i.e inside or outside
 // a word
