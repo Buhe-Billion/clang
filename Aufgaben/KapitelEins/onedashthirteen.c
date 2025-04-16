@@ -66,7 +66,7 @@ for (i = 1; MAXWORD - i ; ++i)      //replacing: for (i = 1; i < MAXWORD; ++i)
   }
   else
     len = 0;
-  while (len > 0)
+  while (len)  //while (len > 0)
   {
     putchar('*');
     --len;
@@ -74,6 +74,6 @@ for (i = 1; MAXWORD - i ; ++i)      //replacing: for (i = 1; i < MAXWORD; ++i)
   putchar('\n');
 }
 
-if (overFlw > 0)
+if (overFlw)    //if (overFlw > 0)
   printf("There are %ld words >= %ld \n", overFlw, MAXWORD);
 }
