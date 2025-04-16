@@ -31,7 +31,7 @@ while ((c = getchar()) != EOF)
 if (c == ' ' || c == '\n' || c == '\t')
 {
   state = OUT;
-  if (nc > 0)
+  if (nc)           //Dark art replacement for: if (nc > 0)
     if (nc < MAXWORD)
       ++wl[nc];
     else
