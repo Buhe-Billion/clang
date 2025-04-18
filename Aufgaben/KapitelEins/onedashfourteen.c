@@ -34,7 +34,7 @@ int main(int argc, char const *argv[])
     if (isprint(i))
       printf("%5d - %c - %5d : ", i, i, cc[i]);
     else
-      printf("%5d -    -%5d : ",i, cc[i]);
+      printf("%5d -   -%5d : ",i, cc[i]);
 
     if (cc[i] > 0)
     {
