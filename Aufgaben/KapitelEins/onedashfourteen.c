@@ -51,5 +51,6 @@ int main(int argc, char const *argv[])
     }
     putchar('\n');
   }
+  
   return 0;
 }
