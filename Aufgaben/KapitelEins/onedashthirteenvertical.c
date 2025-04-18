@@ -55,6 +55,26 @@ for (i = 1; i < MAXWORD ; ++i)
   if (wl[i] > maxvalue)
     maxvalue = wl[i];
 
+for (i = MAXHIST; i > 0; --i)
+{
 
+  for (j = 1; j < MAXWORD; ++j)
+    if (wl[j] * MAXHIST / maxvalue >= i)
+      printf(" * ");
+    else
+      printf("   ");
+  putchar('\n');
 
+}
+
+for (i = 1; i < MAXWORD; ++i)
+  printf("%4d ", i);
+putchar('\n');
+
+for (i = 1; i < MAXWORD; ++i)
+  printf("%4d ", wl[i]);
+putchar('\n');
+
+if (ovflow > 0)
+  printf("There are %d words >= %d \n", ovflow, MAXWORD);
 }
