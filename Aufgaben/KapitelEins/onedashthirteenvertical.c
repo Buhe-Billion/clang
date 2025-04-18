@@ -59,7 +59,7 @@ for (i = MAXHIST; i > 0; --i)       //point of future review
 {
 
   for (j = 1; j < MAXWORD; ++j)           //point of future review
-    if (wl[j] * MAXHIST / maxvalue >= i)
+    if (wl[j] * MAXHIST / maxvalue >= i)  //point of future review
       printf(" * ");
     else
       printf("   ");
