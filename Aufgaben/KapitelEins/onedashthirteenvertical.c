@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 #define MAXHIST 20    //Max length of histogram
-#define MAXWORD 11
-#define IN 1
-#define OUT 0
+#define MAXWORD 11    //Max length of a word
+#define IN 1          //inside a word
+#define OUT 0         //outside a word
 
 //print vertical histogram
 
@@ -11,13 +11,13 @@ int main(int argc, char const *argv[])
 {
 
 int c, i, j, nc, state;
-int maxvalue;
-int ovflow;
-int wl[MAXWORD];
+int maxvalue;             //maximum value for wl[]
+int ovflow;               //number of overflow words
+int wl[MAXWORD];          //word length counter
 
 state = OUT;
-nc = 0;
-ovflow = 0;
+nc = 0;                   //number of chars in a word
+ovflow = 0;               //number of words >= MAXWORD
 for (i = 0; i < MAXWORD; ++i)
   wl[i] = 0;
 
@@ -41,7 +41,7 @@ else if (state == OUT)
 {
 
   state = IN;
-  nc = 1;
+  nc = 1;             //beginning of a new word 
 
 }
 
