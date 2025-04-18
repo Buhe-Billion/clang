@@ -46,12 +46,12 @@ else if (state == OUT)
 }
 
 else
-  ++nc;               //inside a word 
+  ++nc;               //inside a word
 
 }
 
 maxvalue = 0;
-for (i = 1; i < MAXWORD ; ++i)
+for (i = 1; i < MAXWORD ; ++i)      //point of future review
   if (wl[i] > maxvalue)
     maxvalue = wl[i];
 
