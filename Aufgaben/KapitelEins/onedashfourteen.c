@@ -21,8 +21,8 @@ int main(int argc, char const *argv[])
   while ( ( c = getchar() ) != EOF)
     if ( c < MAXCHAR )
       ++cc[c];
-  maxvalue = 0;
 
+  maxvalue = 0;
   for (i = 1; i < MAXCHAR; ++i)       //Point for revision
     if (cc[i] > maxvalue)
       maxvalue = cc[i];
