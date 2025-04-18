@@ -23,7 +23,7 @@ int main(int argc, char const *argv[])
       ++cc[c];
   maxvalue = 0;
 
-  for (i = 1; i < MAXCHAR; ++i)
+  for (i = 1; i < MAXCHAR; ++i)       //Point for revision
     if (cc[i] > maxvalue)
       maxvalue = cc[i];
 
