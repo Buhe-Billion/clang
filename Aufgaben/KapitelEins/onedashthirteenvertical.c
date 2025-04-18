@@ -71,7 +71,7 @@ for (i = 1; i < MAXWORD; ++i)           //point of future review
   printf("%4d ", i);
 putchar('\n');
 
-for (i = 1; i < MAXWORD; ++i)
+for (i = 1; i < MAXWORD; ++i)           //point of future review
   printf("%4d ", wl[i]);
 putchar('\n');
 
