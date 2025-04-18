@@ -12,7 +12,7 @@
 int main(int argc, char const *argv[])
 {
   int c, i;
-  int len;
+  int len;                        //length of each bar
   int maxvalue;
   int cc[MAXCHAR];
 
