@@ -79,3 +79,4 @@ if (ovflow > 0)
   printf("There are %d words >= %d \n", ovflow, MAXWORD);
 }
 //It works, but needs revision
+//Check all the //point of future review comments
