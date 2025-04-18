@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#define MAXHIST 15
-#define MAXCHAR 120
+#define MAXHIST 15              //max length of histogram
+#define MAXCHAR 120             //max different characters
 
 //Print horizontal histogram freq. of different characters
 
