@@ -16,9 +16,9 @@ int main(int argc, char const *argv[])
   int maxvalue;                   //maximum value for cc[]
   int cc[MAXCHAR];                //character counters
 
-  for (i=0; i<MAXCHAR; ++i)        //There has to be a macro for initialising arrays
+  for (i = 0; i < MAXCHAR; ++i)        //There has to be a macro for initialising arrays
     cc[i] = 0;
-  while ((c = getchar()) != EOF)
+  while ( ( c = getchar() ) != EOF)
     if (c < MAXCHAR)
       ++cc[c];
   maxvalue = 0;
