@@ -67,7 +67,7 @@ for (i = MAXHIST; i > 0; --i)       //point of future review
 
 }
 
-for (i = 1; i < MAXWORD; ++i)
+for (i = 1; i < MAXWORD; ++i)           //point of future review
   printf("%4d ", i);
 putchar('\n');
 
