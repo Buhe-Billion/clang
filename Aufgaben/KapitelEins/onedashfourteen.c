@@ -29,6 +29,8 @@ int main(int argc, char const *argv[])
 
   for (i = 1; i < MAXCHAR; ++i)
   {
+    //isprint is a macro from <ctype.h>
+    //it determines if a character is printable
     if (isprint(i))
       printf("%5d - %c - %5d : ", i, i, cc[i]);
     else
