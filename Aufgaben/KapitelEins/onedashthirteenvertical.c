@@ -41,12 +41,12 @@ else if (state == OUT)
 {
 
   state = IN;
-  nc = 1;             //beginning of a new word 
+  nc = 1;             //beginning of a new word
 
 }
 
 else
-  ++nc;
+  ++nc;               //inside a word 
 
 }
 
