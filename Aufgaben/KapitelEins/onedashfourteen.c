@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
   int c, i;
   int len;                        //length of each bar
   int maxvalue;                   //maximum value for cc[]
-  int cc[MAXCHAR];
+  int cc[MAXCHAR];                //character counters
 
   for (i=0; i<MAXCHAR; ++i)        //There has to be a macro for initialising arrays
     cc[i] = 0;
