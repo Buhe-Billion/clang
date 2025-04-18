@@ -19,7 +19,7 @@ int main(int argc, char const *argv[])
   for (i = 0; i < MAXCHAR; ++i)        //There has to be a macro for initialising arrays
     cc[i] = 0;
   while ( ( c = getchar() ) != EOF)
-    if (c < MAXCHAR)
+    if ( c < MAXCHAR )
       ++cc[c];
   maxvalue = 0;
 
