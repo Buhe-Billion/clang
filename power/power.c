@@ -8,17 +8,17 @@ int power (int, int);
 
 int main(int argc, char const *argv[])
 {
-  int i;
+  long i;
 
   for (i=0; i < 300; ++i)
-    printf("%d %d %d \n", i, power(2,i), power(-3,i));
+    printf("%ld %ld %ld \n", i, power(2,i), power(-3,i));
   return 0;
 }
 
 //power: raise base to n-th power; n >= 0
-int power(int base, int n)
+long power(long base, long n)
 {
-  int i, p;
+  long i, p;
 
   p = 1;
   for (i = 1; i <= n; ++i)
