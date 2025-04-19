@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 // A declaration, without a definition leads to a linker error.
-//long power (int m, int n);
-long power (int, int);
+//long power (long m, long n);
+long power (long, long);
 
 //test power function
 
