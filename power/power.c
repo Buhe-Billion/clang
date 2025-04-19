@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+// A declaration, without a definition leads to a linker error.
 int power (int m, int n);
 
 //test power function
