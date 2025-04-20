@@ -42,7 +42,9 @@ long power(long base, long n)
 //power: raise base to n-th power; n >= 0
 //  In the style of old
 
-power (base, n)
+//line below wont work coz return types default to int and our declaration uses long
+//power (base, n)
+long power (base, n)
 long base, n;
 {
   long i,p;
