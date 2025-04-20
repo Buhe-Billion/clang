@@ -18,6 +18,7 @@ int main(int argc, char const *argv[])
   return 0;
 }
 
+/*
 //power: raise base to n-th power; n >= 0
 long power(long base, long n)
 {
@@ -30,3 +31,4 @@ long power(long base, long n)
 }
 
 //Bis dann
+*/
