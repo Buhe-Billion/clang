@@ -1,8 +1,10 @@
 #include <stdio.h>
 
+/*
 // A declaration, without a definition leads to a linker error.
 //long power (long m, long n);
 long power (long, long);
+*/
 
 //test power function
 
@@ -35,4 +37,3 @@ long power(long base, long n)
 
 //power: raise base to n-th power; n >= 0
 //  In the style of old
- 
