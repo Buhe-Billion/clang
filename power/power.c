@@ -6,6 +6,10 @@
 long power (long, long);
 */
 
+//In the style of old: No parameter list was permitted, so the compiler could
+// not readily check that power was being called correctly.
+long power ();
+
 //test power function
 
 int main(int argc, char const *argv[])
@@ -37,3 +41,14 @@ long power(long base, long n)
 
 //power: raise base to n-th power; n >= 0
 //  In the style of old
+
+power (base, n)
+long base, n;
+{
+  long i,p;
+
+  p = 1;
+  for (i = 1; i <= n; ++i)
+    p = p * base;
+  return p;
+}
