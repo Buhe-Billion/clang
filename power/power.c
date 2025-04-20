@@ -44,6 +44,8 @@ long power(long base, long n)
 
 //line below wont work coz return types default to int and our declaration uses long
 //power (base, n)
+
+//This actually works! {And its good - github reference}
 long power (base, n)
 long base, n;
 {
