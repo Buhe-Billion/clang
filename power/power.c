@@ -32,3 +32,7 @@ long power(long base, long n)
 
 //Bis dann
 */
+
+//power: raise base to n-th power; n >= 0
+//  In the style of old
+ 
