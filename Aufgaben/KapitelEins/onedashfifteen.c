@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-#define LOWER 0
-#define UPPER 300
-#define STEP 20
+#define LOWER 0         //Lower limit of table
+#define UPPER 300       //Upper limit of the table
+#define STEP 20         //Step size
 
 float celcius (float);
 
