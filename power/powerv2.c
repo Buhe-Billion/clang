@@ -2,7 +2,7 @@
 
 #include <stdio.h>
 
-int power (int, int)
+int power (int, int);
 
 int main(int argc, char const *argv[])
 {
@@ -17,7 +17,7 @@ power (base, n)
 {
   int p;
 // this works coz  n is called by value, thus unchanged in calling function
-// we only change the copy of arguments we have. 
+// we only change the copy of arguments we have.
   for (p = 1; n > 0; --n)
     p *= base
   return p;
