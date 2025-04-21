@@ -13,12 +13,14 @@ int main(int argc, char const *argv[])
   return 0;
 }
 
+//line below works iff the compiler defaults to int types, 
+//otherwise the types wont match with the function declaration.
 power (base, n)
 {
   int p;
 // this works coz  n is called by value, thus unchanged in calling function
 // we only change the copy of arguments we have.
   for (p = 1; n > 0; --n)
-    p *= base
+    p *= base;
   return p;
 }
