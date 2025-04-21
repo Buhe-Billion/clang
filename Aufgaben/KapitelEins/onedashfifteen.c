@@ -26,6 +26,4 @@ int main(int argc, char const *argv[])
 
 //celcius: convert fahr into celcius
 float celcius(float fahr)
-{
-  return (5.0/9.0) * (fahr-32.0);
-}
+{ return (5.0/9.0) * (fahr-32.0); }
