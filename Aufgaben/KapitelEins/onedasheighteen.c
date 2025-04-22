@@ -7,21 +7,21 @@
 #define MAXLINE 1000		/* Max input line size */
 
 int getline ( char*, int );
-int remove ( char* );
+int removeTrailingWhiteSpaces ( char* );
 
-/* Remove trailing blanks and tabs, and delete blank lines */
+/* remove trailing blanks and tabs, and delete blank lines */
 int main(int argc, char const *argv[])
 {
 	char line[MAXLINE];			/* Current input line */
 
 	while ( getline(line,MAXLINE) > 0 )
-		if ( remove(line) > 0 )
+		if ( removeTrailingWhiteSpaces(line) > 0 )
 			printf("%s", line);
 	return 0;
 }
 
-/* Remove trailing blanks and tabs from character string s */
-remove (char s[])
+/* remove trailing blanks and tabs from character string s */
+removeTrailingWhiteSpaces (char s[])
 {
 	int i;
 
