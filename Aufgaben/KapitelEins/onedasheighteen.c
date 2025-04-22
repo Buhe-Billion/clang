@@ -7,7 +7,7 @@
 #define MAXLINE 1000		/* Max input line size */
 
 int getline ( char*, int );
-int removeTrailingWhiteSpaces ( char* );
+int removeTrailingWhiteSpaces ( char* ); /* we changed the name from remove() coz that's defined under gcc -ansi */
 
 /* remove trailing blanks and tabs, and delete blank lines */
 int main(int argc, char const *argv[])
