@@ -74,4 +74,4 @@ getline (char s[], int lim)
 
     s[j] = '\0';
     return i;
-}
+} /*And it's good*/
