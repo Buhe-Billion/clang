@@ -4,6 +4,10 @@
 //int getline (char line[], int maxline);
 //int getline (char [], int );
 int getline (char* , int);
+//this program in its current state can only be compiled with the -std=c99
+//Point being, that the latest compilers already have a definition for getline()
+// -ansi doesn't work coz c++ comments (//) weren't yet implemented by then.
+
 
 //void copy (char [], char []);
 void copy (char*, char*);
