@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
     }
     if (max > 0)
       printf("%s\n", longest);
-      printf("This line is of length : %d\n", max);
+      printf("This line is of length : %d characters\n", max);
   return 0;
 }
 
