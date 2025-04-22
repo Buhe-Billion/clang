@@ -30,7 +30,7 @@ int main(int argc, char const *argv[])
   }
 
   if (max > 0)        /*There was a line*/
-    printf("%s", longest);
+    printf("This is the longest line of length %d\n%s", max, longest);
   return 0;
 }
 
