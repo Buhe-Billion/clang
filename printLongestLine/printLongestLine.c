@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 }
 
 //getline: read a line into s, and then return that lines length
-getline (char s[], lim)
+getline (char s[], int lim)
 {
 
   int c, i;
