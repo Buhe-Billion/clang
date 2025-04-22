@@ -43,3 +43,31 @@ remove (char s[])
 
 	return i;
 }
+
+/* getline: read a line into s, return length */
+getline (char s[], int lim)
+/*
+*Glad to report that gcc -ansi defaults to int for fns
+*but, I didn't manage to get it to work for args
+*/
+{
+  int c, i, j;
+
+  j = 0;
+  for (i = 0; (c = getchar()) != EOF && c != '\n'; ++i)
+    if (i < lim - 2)
+    {
+      s[j] = c;       /* Line still in boundaries */
+      ++j;
+    }
+
+    if (c == '\n')
+    {
+        s[j] = c;
+        ++j;
+        ++i;
+    }
+
+    s[j] = '\0';
+    return i;
+}
