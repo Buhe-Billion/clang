@@ -24,6 +24,10 @@ int main(int argc, char const *argv[])
 
 /* getline: read a line into s, return length */
 getline (char s[], int lim)
+/*
+*Glad to report that gcc -ansi defaults to int for fns
+*but, I didn't manage to get it to work for args
+*/
 {
   int c, i, j;
 
