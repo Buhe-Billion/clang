@@ -1,5 +1,5 @@
 #include "stdio.h"
-#define MAXLINE 1000
+#define MAXLINE 1000            //Maximum input size
 
 //int getline (char line[], int maxline);
 //int getline (char [], int );
@@ -15,10 +15,10 @@ void copy (char*, char*);
 //Print the longest input line
 int main(int argc, char const *argv[])
 {
-  int len;
-  int max;
-  char line[MAXLINE];
-  char longest[MAXLINE];
+  int len;                          //current line length
+  int max;                          //maximum length seen so far
+  char line[MAXLINE];               //current input line
+  char longest[MAXLINE];            //longest line saved here
 
   max = 0;
   while ((len = getline(line, MAXLINE)) > 0)
@@ -29,6 +29,7 @@ int main(int argc, char const *argv[])
     }
     if (max > 0)
       printf("%s\n", longest);
+      printf("This line is of length : %d\n", max);
   return 0;
 }
 
