@@ -29,15 +29,23 @@ int main(int argc, char const *argv[])
 				++nt;	/*one more tab*/
 			}
 		}
-		else 			/*output blank(s)*/
-			for ( ; nb > 0; --nb)
-				putchar(' ');
-		putchar(c);
+		
+		else
+		{ 	
 
-		if (c == '\n')
-			pos = 0;
-		else if (c == '\t')
-			pos = pos + (TABINC - (pos - 1) % TABINC) - 1;
+			for ( ; nt > 0; --nt)
+				putchar('\t');   /*output tab(s)*/
+			if (c == '\t')		/*forget the blank(s)*/
+				nb = 0;
+			else 				/*output blank(s)*/		
+				for ( ; nb > 0; --nb)
+					putchar(' ');
+			putchar(c);
+		
+			if (c == '\n')
+				pos = 0;
+			else if (c == '\t')
+				pos = pos + (TABINC - (pos - 1) % TABINC) - 1;}
 	}
 	return 0;
 }
