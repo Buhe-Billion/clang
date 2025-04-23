@@ -29,7 +29,7 @@ int main(int argc, char const *argv[])
 				search (c);
 		}
 		else if (c == '\'' || c == '"')
-			in_quote(c)			/*inside quote*/
+			in_quote(c);		/*inside quote*/
 		else 
 			search(c);
 
