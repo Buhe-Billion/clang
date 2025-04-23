@@ -101,3 +101,4 @@ newpos (int pos)
 		return i;		/*new position in line*/
 	}
 }
+/*Investigate the segfault*/
