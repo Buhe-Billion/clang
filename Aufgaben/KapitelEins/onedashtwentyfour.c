@@ -33,7 +33,7 @@ int main(int argc, char const *argv[])
 		else 
 			search(c);
 
-	}	
+		
 
 		if (brace < 0)			/*output errors*/
 		{
@@ -51,7 +51,9 @@ int main(int argc, char const *argv[])
 			printf("Unbalanced parentheses\n");
 			paren = 0;	
 		}
+	}
 
+	
 		if (brace > 0)
 			printf("Unbalanced braces \n");
 
