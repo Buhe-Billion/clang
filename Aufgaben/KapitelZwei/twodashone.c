@@ -13,14 +13,14 @@
 int main(int argc, char const *argv[])
 {
 	/* signed types */
-	printf("signed char min \t = \t %d  or in hex: \t\t%x\n", SCHAR_MIN, SCHAR_MIN);
-	printf("signed char max \t = \t %d  or in hex: \t\t%x\n", SCHAR_MAX, SCHAR_MAX);
+	printf("signed char min \t = \t %d  or in hex: \t\t\t%x\n", SCHAR_MIN, SCHAR_MIN);
+	printf("signed char max \t = \t %d  or in hex: \t\t\t%x\n", SCHAR_MAX, SCHAR_MAX);
 
-	printf("signed short min \t = \t %d  or in hex: \t\t%x\n", SHRT_MIN, SHRT_MIN);
-	printf("signed short max \t = \t %d  or in hex: \t\t%x\n", SHRT_MAX, SHRT_MAX);
+	printf("signed short min \t = \t %d  or in hex: \t\t\t%x\n", SHRT_MIN, SHRT_MIN);
+	printf("signed short max \t = \t %d  or in hex: \t\t\t%x\n", SHRT_MAX, SHRT_MAX);
 
-	printf("signed int min \t\t = \t %d  or in hex: \t%x\n", INT_MIN, INT_MIN);
-	printf("signed int max \t\t = \t %d  or in hex: \t%x\n", INT_MAX, INT_MAX);
+	printf("signed int min \t\t = \t %d  or in hex: \t\t%x\n", INT_MIN, INT_MIN);
+	printf("signed int max \t\t = \t %d  or in hex: \t\t%x\n", INT_MAX, INT_MAX);
 
 	printf("signed long min \t = \t %ld  or in hex: \t%lx\n", LONG_MIN, LONG_MIN);
 	printf("signed long max \t = \t %ld  or in hex: \t%lx\n", LONG_MAX, LONG_MAX);
