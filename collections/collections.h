@@ -8,7 +8,11 @@
 #include <stddef.h>
 #include <limits.h>
 
+/* type definitions */
 typedef unsigned char* byte_pointer;
+enum loop {NO, YES};
+enum loop okloop = YES;
+
 
 /* Function declarations of all the functions we have here */
 int getline (void);
@@ -80,9 +84,25 @@ int atoi (char s[])
 {
 	int i, n;
 
+	/*
 	n = 0;
 	for (i = 0; s[i] >= '0' && 	s[i] <= '9'; ++i)
 		n = 10 * n + (s[i] - '0');
+	return n;
+	*/
+
+	i = n = 0;
+	while (okloop == YES)
+		if (s[i] < '0')
+			okloop = NO;
+		else if (s[i] > '9')
+			okloop = NO;
+		else
+		{
+			n = 10 * n + (s[i] - '0');
+			++i;
+		}
+
 	return n;
 }
 
