@@ -4,6 +4,9 @@
 *from the version you prefer and comment out the rest.
 */
 
+/* Foundational set ups; start: */
+
+
 #include <stdio.h>
 #include <stddef.h>
 #include <limits.h>
@@ -26,12 +29,21 @@ int htoi(char* );
 void squeeze (char* , int);
 void _strcat (char* , char* );
 char* ptr__strcat (char* , char* );
+void squeeze_str (char* ,char* );
 
-
+/* defines */
 #define MAXLINE 1000		/* Define maximum input line size */
+
+/* external variables */
 int max;					/* maximum length seen so far */
 char line [MAXLINE];		/* current input line */
 char longest [MAXLINE];		/* longest line saved here */
+
+
+/* Foundational set ups; end */
+
+
+
 
 getline (void)
 /*
@@ -261,4 +273,27 @@ char* ptr__strcat (char s[], char t[] )
 			;
 
 		return s;
+}
+
+
+/*
+*twodashfour
+*Aufgabe: squeeze_str: Write an alternate version of squeeze that deletes each 
+*character in s1 that matches any character in the string s2. 
+*/
+/* squeeze_str : delete each char in s1 which is in s2	*/
+void squeeze_str (char s1[], char s2[] )
+{
+		int i, j, k;
+
+		for ( i = k = 0; s1[i] != '\0'; i++)
+		{
+			for ( j = 0; s2[j] != '\0' && s2[j] != s1[i]; j++)
+				;
+
+			if (s2[j] == '\0')		/* end of string - no match */
+				s1[k++] = s1[i];
+		}
+
+		s1[k] = '\0';
 }
