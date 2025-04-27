@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stddef.h>
 #include <limits.h>
+#include <ctype.h>
 
 /* type definitions */
 typedef unsigned char* byte_pointer;
