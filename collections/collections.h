@@ -362,3 +362,4 @@ unsigned invert (unsigned x, int p, int n)
 *Aufgabe: Write a function rightrot(x,n) that returns the value of the integer x
 *rotated to the right by n bit positions.
 */
+/**/
