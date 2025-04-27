@@ -209,10 +209,14 @@ void print_limits (void)
 /* this is a poorer, less portable version of tolower from <ctype.h> */
 int lower (int c)
 {
+	/*
 	if ( c >= 'A' && c <= 'Z')
 		return c + 'a' - 'A';
 	else
 		return c;
+	*/
+
+	return c >= 'A' && c <= 'Z' ? c + 'a' - 'A' : c;
 }
 
 /*
