@@ -36,6 +36,7 @@ char* ptr__strcat (char* , char* );
 void squeeze_str (char* ,char* );
 int any (char* , char* );
 unsigned getbits (unsigned , int, int);
+unsigned setbits (unsigned , int, int, unsigned );
 
 /* defines */
 
@@ -334,4 +335,18 @@ unsigned getbits (unsigned x, int p, int n)
 { return ( x >> (p+1-n)) & ~(~0 << n); }
 /* 
 *zB: getbits(x,4,3) returns the three bits in bit positions 4, 3 and 2, right adjusted
+*/
+
+/*
+*twodashsix
+*Aufgabe: Write a function setbits(x, p, n, y) that returns x with the n bits that begin
+*at position p set to the rightmost n bits of y, leaving the other bits unchanged.
+*/
+/* setbits: set n bits of x at position p with bits of y */
+unsigned setbits (unsigned x, int p, int n, unsigned y)
+{ return x & ~(~(~0 << n) << (p+1-n)) | (y & ~(~0 << n)) << (p+1-n); }
+
+/*
+*twodashseven
+*Aufgabe:
 */
