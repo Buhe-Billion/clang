@@ -20,6 +20,7 @@ void copy (void);
 void show_bytes ();
 int atoi (char* );
 void print_limits (void);
+int lower (int);
 
 
 #define MAXLINE 1000		/* Define maximum input line size */
@@ -160,3 +161,12 @@ void print_limits (void)
 	return 0;
 }
 */
+
+/* lower: convert c to lower case; ASCII only */
+int lower (int c)
+{
+	if ( c >= 'A' && c <= 'Z')
+		return c + 'a' - 'A';
+	else
+		return c;
+}
