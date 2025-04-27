@@ -46,6 +46,7 @@ int _bitcount (unsigned);
 int binsearch (int, int* , int );
 void escape (char* , char* );
 void unescape (char* , char* );
+void shellsort (int* , int);
 
 /* defines */
 
