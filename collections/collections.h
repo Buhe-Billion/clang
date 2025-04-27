@@ -81,6 +81,7 @@ void show_bytes (byte_pointer start, size_t len)
 }
 
 /*atoi: convert s to integer */
+/* isdigit() is from <ctype.h> */
 int atoi (char s[])
 {
 	int i, n;
@@ -92,6 +93,7 @@ int atoi (char s[])
 	return n;
 	*/
 
+	/*
 	i = n = 0;
 	while (okloop == YES)
 		if (s[i] < '0')
@@ -104,6 +106,12 @@ int atoi (char s[])
 			++i;
 		}
 
+	return n;
+	*/
+
+	n = 0;
+	for (i = 0; isdigit(s[i]); ++i)
+		n = 10 * n + (s[i] - '0');
 	return n;
 }
 
