@@ -190,7 +190,8 @@ int lower (int c)
 */
 int htoi(char s[])
 {
-	int hexdigit, i, inhex, n;
+	int hexdigit, i, n;
+	enum loop inhex;
 
 	i = 0;
 	if (s[i] == '0')	/*skip 0x/0X */
