@@ -31,6 +31,7 @@ void _strcat (char* , char* );
 char* ptr__strcat (char* , char* );
 void squeeze_str (char* ,char* );
 int any (char* , char* );
+unsigned getbits (unsigned , int, int);
 
 /* defines */
 #define MAXLINE 1000		/* Define maximum input line size */
@@ -318,3 +319,7 @@ any (char s1[], char s2[] )
 
 		return -1;								/* otherwise, no match */
 }
+
+/* getbits: get n bits from position p */
+unsigned getbits (unsigned x, int p, int n)
+{ return ( x >> (p+1-n)) & ~(~0 << n); }
