@@ -41,6 +41,7 @@ unsigned invert (unsigned , int , int );
 unsigned rightrot (unsigned , int );
 int wordlength (void);
 unsigned _rightrot (unsigned, int );
+int bitcount (unsigned);
 
 /* defines */
 
@@ -409,4 +410,15 @@ unsigned _rightrot (unsigned x, int n)
 	}
 
 	return x;
+}
+
+/* bitcount: count 1 bits in x */
+int bitcount (unsigned x)
+{
+	int b;
+
+	for (b = 0; x |= 0; x >> 1)
+		if (x & 01)
+			b++;
+	return b;
 }
