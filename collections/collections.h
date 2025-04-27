@@ -42,6 +42,7 @@ unsigned rightrot (unsigned , int );
 int wordlength (void);
 unsigned _rightrot (unsigned, int );
 int bitcount (unsigned);
+int _bitcount (unsigned);
 
 /* defines */
 
@@ -421,4 +422,19 @@ int bitcount (unsigned x)
 		if (x & 01)
 			b++;
 	return b;
+}
+/*
+*Declaring the argument x to be unsigned ensures that when x is right shifted
+*,vacated bits will be filled with 0s, not sign bits, regardless of the 
+*machine the program is run on.
+*/
+
+/* _bitcount: count 1 bits in x ; faster version */
+int _bitcount (unsigned x)
+{
+		int b;
+
+		for (b = 0; x != 0; x &= x-1)
+			++b;
+		return b;
 }
