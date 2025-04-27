@@ -190,5 +190,31 @@ int lower (int c)
 */
 int htoi(char s[])
 {
-	return 0;
+	int hexdigit, i, inhex, n;
+
+	i = 0;
+	if (s[i] == '0')	/*skip 0x/0X */
+		++i;
+		if (s[i] == 'x' || s[i] == 'X')
+			++i;
+
+	n = 0;	/* Int value to be returned */
+	inhex = YES;	/* assume valid hex decimal */
+	for ( ; inhex == YES; ++i)
+	{
+		if (isdigit(s[i]))
+			hexdigit = s[i] -'0';
+		else if ( s[i] >= 'a' && s[i] <= 'f' )
+			hexdigit = s[i] - 'a' + 10;
+		else if ( s[i] >= 'A' && s[i] <= 'F' )
+			hexdigit = s[i] - 'A' + 10;
+		else
+			inhex = NO;			/* not a valid hexadecimal digit */
+
+		if (inhex == YES)
+			n = 16 * n + hexdigit;
+
+	}
+	
+	return n;
 }
