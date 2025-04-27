@@ -23,6 +23,7 @@ int atoi (char* );
 void print_limits (void);
 int lower (int);
 int htoi(char* );
+void squeeze (char* , int);
 
 
 #define MAXLINE 1000		/* Define maximum input line size */
@@ -218,4 +219,15 @@ int htoi(char s[])
 	}
 	
 	return n;
+}
+
+/* squeeze: delete all c from s */
+void squeeze (char s[], int c)
+{
+	int i, j;
+
+	for (i = j = 0; s[i] != '\0'; i++)
+		if (s[i] != c)
+			s[j++] = s[i];		/* wow, this is beautifull */
+	s[j] = '\0';
 }
