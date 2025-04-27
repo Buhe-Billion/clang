@@ -333,5 +333,5 @@ any (char s1[], char s2[] )
 unsigned getbits (unsigned x, int p, int n)
 { return ( x >> (p+1-n)) & ~(~0 << n); }
 /* 
-*zB: getbits(x,4,3) returns the three bits in bit positions 4, 3 and 2 right adjusted
+*zB: getbits(x,4,3) returns the three bits in bit positions 4, 3 and 2, right adjusted
 */
