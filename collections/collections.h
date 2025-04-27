@@ -247,7 +247,7 @@ void strcat (char s[], char t[] )
 			;
 }
 /* ptr_strcat: concatenate t to the end of s; s must be big enough.
-* Returns ptr to resultant string. 
+* Returns ptr to resultant string.. 
 */
 char* ptr_strcat (char s[], char t[] )
 {
