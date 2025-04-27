@@ -50,6 +50,7 @@ void unescape (char* , char* );
 void shellsort (int* , int);
 void reverse (char* );
 void expand (char* , char* );
+void itoa (int, char* );
 
 /* defines */
 
@@ -608,4 +609,25 @@ void expand (char s1[], char s2[])
 				s2[j++] = c;							/* copy the character */
 
 		s2[j] = '\0';
+}
+
+/* itoa : convert n to characters in s */
+void itoa (int n, char s[])
+{
+		int i, sign;
+
+		if ((sign = n) < 0)		/* record sign */
+			n = -n;							/* make n positive */
+
+		i = 0;
+		/* generate digits in reverse order */
+		do
+			s[i++] = n % 10 + '0';		/* get the next digit */
+		while ((n /= 10) > 0);			/* delete it */
+
+		if (sign < 0)
+			s[i++] = '-';
+		s[i] = '\0';
+
+		reverse(s);									/* double bang wow! */
 }
