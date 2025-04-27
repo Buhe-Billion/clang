@@ -163,6 +163,7 @@ void print_limits (void)
 */
 
 /* lower: convert c to lower case; ASCII only */
+/* this is a poorer, less portable version of tolower from <ctype.h> */
 int lower (int c)
 {
 	if ( c >= 'A' && c <= 'Z')
