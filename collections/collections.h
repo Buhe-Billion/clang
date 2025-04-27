@@ -37,6 +37,7 @@ void squeeze_str (char* ,char* );
 int any (char* , char* );
 unsigned getbits (unsigned , int, int);
 unsigned setbits (unsigned , int, int, unsigned );
+unsigned invert (unsigned , int , int );
 
 /* defines */
 
@@ -348,5 +349,10 @@ unsigned setbits (unsigned x, int p, int n, unsigned y)
 
 /*
 *twodashseven
-*Aufgabe:
+*Aufgabe: Write a function invert (x,p,n) that returns x with the n bits that begin
+*at position p inverted (i.e., 1 changed into 0 and vice versa), leaving the others 
+*unchanged.
 */
+/* invert: inverts the n bits of x that begin at position p */
+unsigned invert (unsigned x, int p, int n)
+{ return x ^ (~(~0 << n) << (p+1-n)); }
