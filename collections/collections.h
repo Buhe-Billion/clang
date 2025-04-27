@@ -13,12 +13,16 @@
 #include <ctype.h>
 
 /* type definitions */
+
+
 typedef unsigned char* byte_pointer;
 enum loop {NO, YES};
 enum loop okloop = YES;
 
 
 /* Function declarations of all the functions we have here */
+
+
 int getline (void);
 void copy (void);
 void show_bytes ();
@@ -34,9 +38,14 @@ int any (char* , char* );
 unsigned getbits (unsigned , int, int);
 
 /* defines */
+
+
 #define MAXLINE 1000		/* Define maximum input line size */
 
+
 /* external variables */
+
+
 int max;					/* maximum length seen so far */
 char line [MAXLINE];		/* current input line */
 char longest [MAXLINE];		/* longest line saved here */
