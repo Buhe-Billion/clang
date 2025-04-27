@@ -24,8 +24,8 @@ void print_limits (void);
 int lower (int);
 int htoi(char* );
 void squeeze (char* , int);
-void strcat (char* , char* );
-char* ptr_strcat (char* , char* );
+void _strcat (char* , char* );
+char* ptr__strcat (char* , char* );
 
 
 #define MAXLINE 1000		/* Define maximum input line size */
@@ -234,8 +234,8 @@ void squeeze (char s[], int c)
 	s[j] = '\0';
 }
 
-/* strcat: concatenate t to the end of s; s must be big enough */
-void strcat (char s[], char t[] )
+/* _strcat: concatenate t to the end of s; s must be big enough */
+void _strcat (char s[], char t[] )
 {
 		int i, j;
 
@@ -246,10 +246,10 @@ void strcat (char s[], char t[] )
 		while ((s[i++] = t[j++]) != '\0') /* copy t */
 			;
 }
-/* ptr_strcat: concatenate t to the end of s; s must be big enough.
+/* ptr__strcat: concatenate t to the end of s; s must be big enough.
 * Returns ptr to resultant string. 
 */
-char* ptr_strcat (char s[], char t[] )
+char* ptr__strcat (char s[], char t[] )
 {
 		int i, j;
 
