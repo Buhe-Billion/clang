@@ -22,6 +22,7 @@ void show_bytes ();
 int atoi (char* );
 void print_limits (void);
 int lower (int);
+int htoi(char* );
 
 
 #define MAXLINE 1000		/* Define maximum input line size */
@@ -179,4 +180,15 @@ int lower (int c)
 		return c + 'a' - 'A';
 	else
 		return c;
+}
+
+/*
+*twodashthree.c
+*Aufgabe: htoi(s), which converts a string to hexadecimal digits 
+*(including an optional 0x or 0X) into its equivalent integer value.The allowable
+*digits are 0 through 9, a through f, and A through F.
+*/
+int htoi(char s[])
+{
+	return 0;
 }
