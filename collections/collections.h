@@ -40,6 +40,7 @@ unsigned setbits (unsigned , int, int, unsigned );
 unsigned invert (unsigned , int , int );
 unsigned rightrot (unsigned , int );
 int wordlength (void);
+unsigned _rightrot (unsigned, int );
 
 /* defines */
 
@@ -389,4 +390,23 @@ int wordlength (void)
 		for (i = 1; (v = v >> 1) > 0; i++)
 			;
 		return i;
+}
+
+/* _rightrot: rotate x to the right by n positions */
+unsigned _rightrot (unsigned x, int n)
+{
+	int wordlength(void);
+	unsigned rbits;
+
+	if ((n = n % wordlength()) > 0)
+	{
+		rbits	= ~(~0 << n) & x;	/* n rightmost bits of x */
+														/* n rightmost bits to the left */
+
+		rbits = rbits << (wordlength() - n);
+		x = x >> n;							/* x shifted n positions to the right*/
+		x = x | rbits;					/* rotation complete */
+	}
+
+	return x;
 }
