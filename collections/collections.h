@@ -53,6 +53,7 @@ void expand (char* , char* );
 void itoa (int, char* );
 int trim (char* );
 void _itoa (int, char*);
+void itob (int, char* ,int);
 
 
 /* defines */
@@ -674,5 +675,35 @@ void _itoa (int n, char s[])
 
 		s[i] = '\0';
 		reverse(s);
+		/* We must simulate how this would work at bit level */
 }
 
+/*
+*threedashfive
+*Aufgabe: Write the function itob(n, s, b) that converts the integer n into base b
+*character representation in the string s. In particular, itob(n,s,16) formats
+*n as a hexadecimal integer in s.
+*/
+
+/* itob: convert n to characters in s - base b */
+void itob (int n, char s[], int b)
+{
+		int i, j, sign;
+		void reverse(char* );
+
+		if ((sign = n) < 0 )					/* record the sign */
+			n = -n;											/* Vulnerable to a logic error on 2's complement */
+
+		i = 0;
+		do
+		{ 														/* geberate digits in reverse order */
+			j = n % b;									/* get next digit   								*/
+			s[i++] = (j <= 9) ? j + '0' : j + 'a' - 10;
+		}
+		while ((n /= b) > 0);					/* delete it */
+
+		if (sign < 0)
+			s[i++] = '-';
+		s[i] = '\0';
+		reverse(s);
+}
