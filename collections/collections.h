@@ -52,12 +52,14 @@ void reverse (char* );
 void expand (char* , char* );
 void itoa (int, char* );
 int trim (char* );
+void _itoa (int, char*);
 
 
 /* defines */
 
 
 #define MAXLINE 1000		/* Define maximum input line size */
+#define abs(x) ((x) < 0 ? -(x) : (x))		/* Find the absolute value of x */
 
 
 /* external variables */
@@ -645,3 +647,32 @@ int trim (char s[])
 		s[n+1] = '\0';
 		return n;	
 }
+
+/*
+*threedashfour
+*Aufgabe: In a two's complement number representation, our version of itoa does not handle
+*the largest negative number, that is, the value of n equal to -(2^(wordsize - 1)).Explain
+*why not. Modify it to print that value correclty, regardless of the machine on which it
+*runs on.
+*/
+
+/* _itoa: convert n to characters in s - modified */
+void _itoa (int n, char s[])
+{
+		int i, sign;
+		void reverse (char* );
+
+		sign = n;							/* record sign */
+		i = 0;
+
+		do
+			s[i++] = abs( n % 10 ) + '0';
+		while ((n /= 10) != 0);
+
+		if (sign < 0)
+			s[i++] = '-';
+
+		s[i] = '\0';
+		reverse(s);
+}
+
