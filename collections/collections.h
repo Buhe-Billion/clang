@@ -54,6 +54,7 @@ void itoa (int, char* );
 int trim (char* );
 void _itoa (int, char*);
 void itob (int, char* ,int);
+void _itoa_ (int, char* ,int);
 
 
 /* defines */
@@ -704,6 +705,36 @@ void itob (int n, char s[], int b)
 
 		if (sign < 0)
 			s[i++] = '-';
+		s[i] = '\0';
+		reverse(s);
+}
+
+/*
+*threedashsix
+*Aufgabe: Write a version of itoa that accepts three arguments instead of two. The third argument
+*is a minimum field width; the converted number must be padded with blanks on the left if 
+*necessary to make it wide enough.
+*/
+
+/* itoa : convert n to characters in s, w charcters wide */
+void _itoa_ (int n, char s[],int w)
+{
+		int i,sign;
+		void reverse (char* s);
+
+		sign = n; 							/* record sign */
+		i = 0;
+
+		do
+			s[i++] = abs(n%10) + '0';
+		while ((n /= 10) != 0);
+
+		if (sign < 0)
+			s[i++] = '-';
+
+		while (i<w)						/* pad with blanks */
+			s[i++] = ' ';
+
 		s[i] = '\0';
 		reverse(s);
 }
