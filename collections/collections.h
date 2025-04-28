@@ -58,6 +58,7 @@ void _itoa_ (int, char* ,int);
 int getline_ (char* , int);
 int strindex (char* , char* );
 int strrindex (char* , char*);
+double _atof_ (char* );
 
 
 /* defines */
@@ -817,4 +818,34 @@ int strrindex (char s[],char t[])
 		}
 
 		return -1;
+}
+
+/* 
+* _atof_ : I have so named this function because the standard library icnludes an
+* atof.The header <stdlib.h> declares it.
+*_atof_ converts string s to double
+*/
+
+double _atof_ (char s[])
+{
+		double val, power;
+		int i,sign;
+
+		for (i=0; isspace(s[i]); i++)	/* skip whitespace */
+			;
+
+		sign = (s[i] == '-') ? -1 : 1;
+		if (s[i] == '+' || s[i] == '-')
+			i++;
+		for (val = 0.0; isdigit(s[i]); i++)
+			val = 10.0 * val + (s[i] - '0');
+		if (s[i] == '.')
+			i++;
+		for (power = 1.0; isdigit(s[i]); i++)
+		{
+			val = 10.0 * val + (s[i] - '0');
+			power *= 10.0;
+		}
+
+		return sign * val / power; /*Double bang! What a play*/
 }
