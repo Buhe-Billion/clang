@@ -761,7 +761,7 @@ int getline_ (char s[],int lim)
 *except that it returns a pointer instead of an index.
 */
 
-int strindex (char s[], char t[]);
+int strindex (char s[], char t[])
 {
 		int i, j, k;
 
