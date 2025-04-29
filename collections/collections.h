@@ -864,6 +864,6 @@ double _atof_ (char s[])
 					val /= 10;
 		}
 
-		return val
+		return val;
 }
 
