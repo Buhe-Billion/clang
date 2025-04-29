@@ -1,6 +1,6 @@
 #include "../../collections/collections.h"
 
-const char* pattern = "ould"; /* pattern to search for */
+static const char* pattern = "ould"; /* pattern to search for */
 
 /* find all lines matching the pattern */
 
