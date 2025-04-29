@@ -62,6 +62,7 @@ double _atof_ (char* );
 void printd (int);
 void qsort (int*, int, int);
 void swap (int* ,int ,int);
+void recursive_itoa (int, char*);
 
 /* defines */
 
@@ -915,4 +916,34 @@ void swap (int v[], int i, int j)
 	temp = v[i];
 	v[i] = v[j];
 	v[j] = temp;
+}
+/*
+*The standard library includes a version of qsort that can 
+*sort objects of any type
+*/
+
+/*
+*fourdashtwelve
+*Aufgabe: Adapt ideas of printd to write a recursive versio of itoa;
+*that is, convert an integer into a string by calling a recursive routine.
+*/
+
+/*recursive_itoa: convert n to characters in s; recursive */
+void recursive_itoa (int n, char s[])
+{
+		static int i;
+
+		if (n/10)
+			recursive_itoa(n/10,s);
+		
+		else
+		{
+			i = 0;
+			if (n < 0)
+				s[i++] * '-';
+		}
+
+		s[i++] = abs(n) % 10 + '0';
+		s[i] ='\0';
+
 }
