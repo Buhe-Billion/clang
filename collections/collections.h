@@ -63,6 +63,8 @@ void printd (int);
 void qsort (int*, int, int);
 void swap (int* ,int ,int);
 void recursive_itoa (int, char*);
+void reverse_ (char* );
+void reverser (char* , int, int);
 
 /* defines */
 
@@ -946,4 +948,32 @@ void recursive_itoa (int n, char s[])
 		s[i++] = abs(n) % 10 + '0';
 		s[i] ='\0';
 
+}
+
+/*
+*fourdashthirteen
+*Write a recursive version of the function reverse(s),
+*which reverses the string s in place
+*/
+
+/*reverse_ : reverse string s in place*/
+void reverse_ (char s[])
+{
+		void reverser (char* , int, int);
+
+		reverser (s, 0, strlen(s));
+}
+/* reverser: reverse string s in place; recursive*/
+void reverser (char s[], int i, int len)
+{
+		int c, j;
+
+		j = len - (i + 1);
+		if (i < j)
+		{
+			c = s[i];
+			s[i] = s[j];
+			s[j] = c; /*could've used swap here*/
+			reverser(s,++i,len);
+		}
 }
