@@ -61,7 +61,7 @@ int strrindex (char* , char*);
 double _atof_ (char* );
 void printd (int);
 void qsort (int*, int, int);
-
+void swap (int* ,int ,int);
 
 /* defines */
 
@@ -881,4 +881,38 @@ void printd (int n)
 	if (n/10)
 		printd(n / 10);
 	putchar(n % 10 + '0');
+}
+
+/* qsort: sort v[left] ... v[right] to increasing order */
+void qsort (int v[], int left, int right)
+{
+		int i, last;
+
+		/* do nothing if array contains fewer than two elements*/
+		if (left >= right)
+			return;
+		
+		/*move partition element to v[0]*/
+		swap(v, left, (left+right)/2);
+		last = left;
+
+		/*partition*/
+		for (i = left+1; i <= right; i++)
+			if (v[i] < v[left])
+				swap(v, ++last, i);
+
+		/*restore partition elem*/
+		swap(v, left, last);
+		qsort(v, left, last-1);
+		qsort(v, last+1,right);
+
+}
+/* swap : interchange v[i] and v[j]*/
+void swap (int v[], int i, int j)
+{
+	int temp;
+
+	temp = v[i];
+	v[i] = v[j];
+	v[j] = temp;
 }
