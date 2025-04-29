@@ -60,6 +60,7 @@ int strindex (char* , char* );
 int strrindex (char* , char*);
 double _atof_ (char* );
 void printd (int);
+void qsort (int*, int, int);
 
 
 /* defines */
