@@ -7,7 +7,7 @@ static const char* pattern = "ould"; /* pattern to search for */
 int main(int argc, char const *argv[])
 {
 	char line[MAXLINE];
-	int found = 0;
+	int register found = 0;
 
 	while (getline_(line,MAXLINE) > 0)
 		if (strindex(line,pattern) >= 0)
@@ -16,4 +16,4 @@ int main(int argc, char const *argv[])
 			found++;
 		}
 	return found;
-}
+} 
