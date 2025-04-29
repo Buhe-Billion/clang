@@ -59,6 +59,7 @@ int getline_ (char* , int);
 int strindex (char* , char* );
 int strrindex (char* , char*);
 double _atof_ (char* );
+void printd (int);
 
 
 /* defines */
@@ -867,3 +868,16 @@ double _atof_ (char s[])
 		return val;
 }
 
+/* printd: print n in decimal */
+void printd (int n)
+{
+	if (n < 0)
+	{
+			putchar('-');
+			n = -n;	/* This function can fail on twos complement */
+	}
+
+	if (n/10)
+		printd(n / 10);
+	putchar(n % 10 + '0');
+}
