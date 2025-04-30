@@ -66,6 +66,8 @@ void recursive_itoa (int, char*);
 void reverse_ (char* );
 void reverser (char* , int, int);
 void swap_ptr (int*, int*);
+int getch (void);
+void ungetch (int);
 
 /* defines */
 
@@ -103,14 +105,18 @@ void swap_ptr (int*, int*);
 															y  = x;		\
 															x = _z;		}
 
+#define BUFSIZE 100
+
 
 
 /* external variables */
 
 
-int max;					/* maximum length seen so far */
-char line [MAXLINE];		/* current input line */
-char longest [MAXLINE];		/* longest line saved here */
+int max;					       	/* maximum length seen so far */
+char line [MAXLINE];		 	/* current input line */
+char longest [MAXLINE];	 	/* longest line saved here */
+static char buf[BUFSIZE];	/* buffer for ungetch */
+static int bufp = 0;			/* next free position in buf */
 
 
 /* Foundational set ups; end */
@@ -1018,4 +1024,22 @@ void swap_ptr (int* px, int* py)
 		temp = *px;
 		*px = *py;
 		*py = temp;
+}
+
+
+/* get a (possibly pushed back) character */
+signed int getch(void) 
+{ return (bufp > 0) ? buf[--bufp] : getchar(); }
+/* 
+*signed keyword here is just for asthetics, all int types except
+*char are signed by default
+*/
+
+/* push character back on input */
+void ungetch (signed int c)
+{
+		if (bufp >= BUFSIZE)
+			printf("ungetch: too many characters \n");
+		else
+			buf[bufp++] = c;
 }
