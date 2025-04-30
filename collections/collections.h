@@ -72,6 +72,37 @@ void reverser (char* , int, int);
 #define MAXLINE 1000		/* Define maximum input line size */
 #define abs(x) ((x) < 0 ? -(x) : (x))		/* Find the absolute value of x */
 
+/*
+*fourdashfourteen
+*Define a macro swap_macro(t,x,y) that interchanges two arguments of type t.
+*(Block structure will help.)
+*/
+
+/*
+*Braces define a new block. At the beginning of the block
+*we can declare local variables. _z is a local variable of 
+*type t that helps swap the two arguments.
+*
+*The macro works if neither of the arguments is _z. If one
+* of the arguments has the name _z:
+* swap_macro (int, _z, x)
+*then when the macro is expanded, it becomes
+* {
+			int _z;
+			_z = _z;
+			_z = x;
+			x = _z;
+	}
+* and the two arguments are not swapped.The assumption is that
+* _z will not be used as a variable name.
+*/
+
+#define swap_macro(t, x, y) { t   _z;   \
+															_z = y;	  \
+															y  = x;		\
+															x = _z;		}
+
+
 
 /* external variables */
 
