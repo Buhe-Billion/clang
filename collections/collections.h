@@ -65,6 +65,7 @@ void swap (int* ,int ,int);
 void recursive_itoa (int, char*);
 void reverse_ (char* );
 void reverser (char* , int, int);
+void swap_ptr (int*, int*);
 
 /* defines */
 
@@ -1007,4 +1008,14 @@ void reverser (char s[], int i, int len)
 			s[j] = c; /*could've used swap here*/
 			reverser(s,++i,len);
 		}
+}
+
+/*interchange *px and *py */
+void swap_ptr (int* px, int* py)
+{
+		int temp;
+
+		temp = *px;
+		*px = *py;
+		*py = temp;
 }
