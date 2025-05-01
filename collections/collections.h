@@ -70,6 +70,7 @@ int getch (void);
 void ungetch (int);
 signed int getint (signed int*);
 signed int getfloat (float* );
+signed int strlen_ (char* );
 
 
 /* defines */
@@ -1131,4 +1132,15 @@ signed int  getfloat (float* pn)
 		if (c != EOF)
 			ungetch(c);
 		return c;
+}
+
+/* strlen_: return length of string s*/
+signed int strlen_ (char* s)
+{
+		signed int n;
+
+		for (n = 0; *s != '\0'; s++)
+			n++;
+
+		return n;
 }
