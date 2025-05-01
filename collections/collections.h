@@ -1047,9 +1047,9 @@ void ungetch (signed int c)
 }
 
 /* getint : get next integer from input into *pn */
-signed int getint (signed int* pn)
+signed int getint ( signed int* pn)
 {
-		signed int c, sign;
+		signed int c, d, sign;
 
 		/* skip white space */
 		while (isspace(c = getch()))
@@ -1057,14 +1057,25 @@ signed int getint (signed int* pn)
 
 		if (!isdigit(c) && c != EOF && c != '+' && c != '-')
 		{
-				ungetch(c);			/* it's not a number */
+				ungetch(c);			/* it's not a number; NaN */
 				return 0;
 		}
 
 		sign = (c == '-') ? -1 : 1;
+		
 		if (c == '+' || c == '-')
-			c = getch();
-
+		{
+				d = c;	/* remember sign char */
+				if (!isdigit(c = getch()))
+				{
+						if (c != EOF)
+							ungetch(c);		/* push back non-digit */
+						
+						ungetch(d);			/* push back sign char */
+						return d;				/* return sign char */
+				}
+		}
+		
 		for (*pn = 0; isdigit(c); c = getch())
 			*pn = 10 * *pn + (c - '0');
 
