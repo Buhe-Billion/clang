@@ -74,6 +74,7 @@ signed int strlen_ (char* );
 char* alloc (int);
 void afree (char* );
 void strcopy (char*, char*);
+signed int strcompare (char*, char*);
 
 
 /* defines */
@@ -1226,4 +1227,16 @@ void strcopy (char* s,char* t)
 {
 	while (*s++ = *t++)
 		;
+}
+
+/*strcompare: return <0 if s<t, 0 if s==t, s>0 if s>t*/
+signed int strcompare (char* s, char* t)
+{
+	signed int i;
+
+	for (i = 0; s[i] == t[i]; i++)
+		if (s[i] == '\0')
+			return 0;
+
+	return s[i] - t[i];
 }
