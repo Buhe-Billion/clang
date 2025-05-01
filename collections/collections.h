@@ -1230,6 +1230,7 @@ void strcopy (char* s,char* t)
 }
 
 /*strcompare: return <0 if s<t, 0 if s==t, s>0 if s>t*/
+/*
 signed int strcompare (char* s, char* t)
 {
 	signed int i;
@@ -1239,4 +1240,14 @@ signed int strcompare (char* s, char* t)
 			return 0;
 
 	return s[i] - t[i];
+}
+*/
+
+signed int strcompare (char* s, char* t)
+{
+	for ( ; *s == *t; s++, t++)
+		if (*s == '\0')
+			return 0;
+
+	return *s - *t;
 }
