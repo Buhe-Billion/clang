@@ -69,6 +69,7 @@ void swap_ptr (int*, int*);
 int getch (void);
 void ungetch (int);
 signed int getint (signed int*);
+signed int getfloat (float* );
 
 
 /* defines */
@@ -1063,6 +1064,7 @@ signed int getint ( signed int* pn)
 
 		sign = (c == '-') ? -1 : 1;
 		
+		/* fivedashone */
 		if (c == '+' || c == '-')
 		{
 				d = c;	/* remember sign char */
@@ -1083,5 +1085,50 @@ signed int getint ( signed int* pn)
 		if (c != EOF)
 			ungetch(c);
 
+		return c;
+}
+
+/*
+*fivedashtwo
+*Aufgabe: Write getfloat, the floating-point analog of getint.
+*What type does getfloat return as its function value? 
+*/
+
+/* getfloat: get next floating-point number from input */
+signed int  getfloat (float* pn)
+{
+		int c, sign;
+		float power;
+
+		/* skip white space */
+		while (isspace(c = getch()))
+			;
+
+		if (!isdigit(c) && c != EOF && c != '+' && c != '-' && c != '.')
+		{
+			/* NaN */
+			ungetch(c);
+			return 0;
+		}
+
+		sign = (c == '-') ? -1 : 1;
+		if (c == '+' || c == '-')
+			c = getch();
+
+		for (*pn = 0.0; isdigit(c); c = getch())
+			*pn = 10.0 * *pn + (c - '0'); 	/* integer part*/
+		
+		if (c == '.')
+			c = getch();
+
+		for (power = 1.0; isdigit(c); c = getch())
+		{
+			*pn = 10.0 * *pn + (c - '0'); /* Fractional part */
+			power *= 10.0;
+		}
+
+		*pn *= sign / power;	/* final number */
+		if (c != EOF)
+			ungetch(c);
 		return c;
 }
