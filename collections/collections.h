@@ -1189,6 +1189,7 @@ void afree (char* p)
 }
 
 /*strcopy: copy t to s; array subscript version*/
+/*
 void strcopy (char* s,char* t)
 {
 	signed int i;
@@ -1197,3 +1198,21 @@ void strcopy (char* s,char* t)
 	while ((s[i] = t[i]) != '\0')
 		i++;
 }
+*/
+
+/* pointer v1*/
+void strcopy (char* s,char* t)
+{
+	while ((*s = *t) != '\0')
+	{
+		s++;
+		t++;
+	}
+}
+
+
+/* pointer v2*/
+/* void strcopy (char* s,char* t) */
+
+/* pointer v3*/
+/* void strcopy (char* s,char* t) */
