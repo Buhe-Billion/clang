@@ -71,6 +71,9 @@ void ungetch (int);
 signed int getint (signed int*);
 signed int getfloat (float* );
 signed int strlen_ (char* );
+char* alloc (int);
+void afree (char* );
+
 
 
 /* defines */
@@ -110,6 +113,7 @@ signed int strlen_ (char* );
 															x = _z;		}
 
 #define BUFSIZE 100
+#define ALLOCSIZE 10000			/* Size of available space */															
 
 
 
@@ -119,8 +123,13 @@ signed int strlen_ (char* );
 int max;					       	/* maximum length seen so far */
 char line [MAXLINE];		 	/* current input line */
 char longest [MAXLINE];	 	/* longest line saved here */
+
 static char buf[BUFSIZE];	/* buffer for ungetch */
 static int bufp = 0;			/* next free position in buf */
+
+static char allocbuf[ALLOCSIZE]; /* storage for alloc */
+static char* allocp = allocbuf;	 /* next free position*/
+
 
 
 /* Foundational set ups; end */
