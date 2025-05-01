@@ -1144,6 +1144,7 @@ signed int  getfloat (float* pn)
 }
 
 /* strlen_: return length of string s*/
+/*
 signed int strlen_ (char* s)
 {
 		signed int n;
@@ -1153,6 +1154,18 @@ signed int strlen_ (char* s)
 
 		return n;
 }
+*/
+
+signed int strlen_ (char* s)
+{
+		char* p = s;
+
+		while (*p != '\0')
+			p++;
+
+		return p - s; /* p - s + 1*/
+}
+
 
 /* return pointer to n characters */
 char* alloc(int n)
