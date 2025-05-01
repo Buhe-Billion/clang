@@ -73,7 +73,7 @@ signed int getfloat (float* );
 signed int strlen_ (char* );
 char* alloc (int);
 void afree (char* );
-
+void strcopy (char*, char*);
 
 
 /* defines */
@@ -1186,4 +1186,14 @@ void afree (char* p)
 {
 		if (p >= allocbuf && p < allocbuf + ALLOCSIZE)
 			allocp = p;
+}
+
+/*strcopy: copy t to s; array subscript version*/
+void strcopy (char* s,char* t)
+{
+	signed int i;
+
+	i = 0;
+	while ((s[i] = t[i]) != '\0')
+		i++;
 }
