@@ -1097,7 +1097,7 @@ signed int getint ( signed int* pn)
 /* getfloat: get next floating-point number from input */
 signed int  getfloat (float* pn)
 {
-		int c, sign;
+		signed int c, sign;
 		float power;
 
 		/* skip white space */
