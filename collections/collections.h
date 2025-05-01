@@ -1201,6 +1201,7 @@ void strcopy (char* s,char* t)
 */
 
 /* pointer v1*/
+/*
 void strcopy (char* s,char* t)
 {
 	while ((*s = *t) != '\0')
@@ -1209,10 +1210,14 @@ void strcopy (char* s,char* t)
 		t++;
 	}
 }
-
+*/
 
 /* pointer v2*/
-/* void strcopy (char* s,char* t) */
+void strcopy (char* s,char* t) 
+{
+	while ((*s++ = *t++) != '\0')
+		;
+}
 
 /* pointer v3*/
 /* void strcopy (char* s,char* t) */
