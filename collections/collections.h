@@ -1256,7 +1256,7 @@ signed int strcompare (char* s, char* t)
 }
 
 /* readlines: read input lines */
-signed int readlines (char** lineptr, int maxlines)
+signed int readlines (char** lineptr,signed int maxlines)
 {
 	signed int len, nlines;
 	char *p, line[MAXLEN];
@@ -1273,4 +1273,13 @@ signed int readlines (char** lineptr, int maxlines)
 		}
 
 	return nlines;
+}
+
+/* writelines: write output lines */
+void writelines (char** lineptr, signed int nlines)
+{
+	signed int i;
+
+	for (i = 0; i < nlines; i++)
+		printf("%s\n", lineptr[i]);
 }
