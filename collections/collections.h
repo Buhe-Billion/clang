@@ -1276,10 +1276,18 @@ signed int readlines (char** lineptr,signed int maxlines)
 }
 
 /* writelines: write output lines */
+/*
 void writelines (char** lineptr, signed int nlines)
 {
 	signed int i;
 
 	for (i = 0; i < nlines; i++)
 		printf("%s\n", lineptr[i]); 
+}
+*/
+
+void writelines (char** lineptr, signed int nlines)
+{
+	while (nlines-- > 0)
+		printf("%s\n", *lineptr++);
 }
