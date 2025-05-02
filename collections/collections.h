@@ -75,6 +75,8 @@ char* alloc (int);
 void afree (char* );
 void strcopy (char*, char*);
 signed int strcompare (char*, char*);
+signed int readlines (char**, int);
+void writelines (char**, int);
 
 
 /* defines */
@@ -115,6 +117,7 @@ signed int strcompare (char*, char*);
 
 #define BUFSIZE 100
 #define ALLOCSIZE 10000			/* Size of available space */															
+#define MAXLEN 1000         /* max length of any input line*/
 
 
 
@@ -1250,4 +1253,24 @@ signed int strcompare (char* s, char* t)
 			return 0;
 
 	return *s - *t;
+}
+
+/* readlines: read input lines */
+signed int readlines (char** lineptr, int maxlines)
+{
+	signed int len, nlines;
+	char *p, line[MAXLEN];
+
+	nlines = 0;
+	while ((len = getline_(line,MAXLEN)) > 0)
+		if (nlines >= maxlines || (p = alloc(len)) == NULL)
+			return -1;
+		else
+		{
+			line[len-1] = '\0';	/* delete newline */
+			strcopy(p,line);
+			lineptr[nlines++] = p;
+		}
+
+	return nlines;
 }
