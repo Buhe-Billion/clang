@@ -60,7 +60,7 @@ int strindex (char* , char* );
 int strrindex (char* , char*);
 double _atof_ (char* );
 void printd (int);
-void qsort (int*, int, int);
+void qsort (signed int*, signed int, signed int);
 void swap (int* ,int ,int);
 void recursive_itoa (int, char*);
 void reverse_ (char* );
@@ -942,9 +942,9 @@ void printd (int n)
 }
 
 /* qsort: sort v[left] ... v[right] to increasing order */
-void qsort (int v[], int left, int right)
+void qsort (signed int v[], signed int left, signed int right)
 {
-		int i, last;
+		signed int i, last;
 
 		/* do nothing if array contains fewer than two elements*/
 		if (left >= right)
@@ -966,9 +966,9 @@ void qsort (int v[], int left, int right)
 
 }
 /* swap : interchange v[i] and v[j]*/
-void swap (int v[], int i, int j)
+void swap (signed int v[], signed int i, signed int j)
 {
-	int temp;
+	signed int temp;
 
 	temp = v[i];
 	v[i] = v[j];
@@ -986,9 +986,9 @@ void swap (int v[], int i, int j)
 */
 
 /*recursive_itoa: convert n to characters in s; recursive */
-void recursive_itoa (int n, char s[])
+void recursive_itoa (signed int n, char s[])
 {
-		static int i;
+		static signed int i;
 
 		if (n/10)
 			recursive_itoa(n/10,s);
