@@ -1281,5 +1281,5 @@ void writelines (char** lineptr, signed int nlines)
 	signed int i;
 
 	for (i = 0; i < nlines; i++)
-		printf("%s\n", lineptr[i]);
+		printf("%s\n", lineptr[i]); 
 }
