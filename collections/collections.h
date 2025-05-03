@@ -79,6 +79,8 @@ signed int readlines (char**, int);
 void writelines (char**, int);
 void qsortv2 (char**, signed int, signed int);
 void swapv2 (char**, signed int, signed int);
+signed int day_of_year (signed int, signed int, signed int);
+void month_day (signed int, signed int, signed int*, signed int*);
 
 
 
@@ -1338,4 +1340,30 @@ void swapv2 (char** v, signed int i, signed int j)
 		temp = v[i];
 		v[i] = v[j];
 		v[j] = temp;
+}
+
+/* day_of_year: set day of year from month & day */
+signed int day_of_year (signed int year, signed int month, signed int day)
+{
+		int i, leap;
+
+		leap = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+		for (i = 1; i < month; i++)
+			day += daytab[leap][i];
+
+		return day;
+}
+
+
+/* month_day : set month, day from day of year */
+void month_day (signed int year, signed int yearday, signed int* pmonth, signed int* pday)
+{
+	signed int i, leap;
+
+	leap = year % 4 == 0 && year % 100 != 0 || year % 400 == 0;
+	for (i = 1; yearday > daytab[leap][i]; i++)
+		yearday -= daytab[leap][i];
+
+	*pmonth = i;
+	*pday = yearday;
 }
