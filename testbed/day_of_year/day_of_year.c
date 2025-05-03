@@ -25,6 +25,7 @@ int main(int argc, char const *argv[])
 	printf("The 123rd day of 2025, vandaag, is on the %drd day of the %dth month \n", *pday, *pmonth);
 	*/
 
+	/* Drop the The, it's much cleaner that way */
 	month_day(2025, 123, &month, &day);
 	printf("The 123rd day of 2025, vandaag, is on the %drd day of the %dth month \n", day, month);
 
