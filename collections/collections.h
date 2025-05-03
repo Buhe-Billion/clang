@@ -77,6 +77,9 @@ void strcopy (char*, char*);
 signed int strcompare (char*, char*);
 signed int readlines (char**, int);
 void writelines (char**, int);
+void qsortv2 (char**, signed int, signed int);
+void swapv2 (char**, signed int, signed int);
+
 
 
 /* defines */
@@ -1290,4 +1293,36 @@ void writelines (char** lineptr, signed int nlines)
 {
 	while (nlines-- > 0)
 		printf("%s\n", *lineptr++);
+}
+
+/* qsortv2 : sort v[left] ... v[right] into increasing order */
+void qsortv2 (char** v, signed int left, signed int right)
+{
+		signed int i, last;
+		void swapv2 (char* v[], signed int i, signed int j);
+
+		/* do nothing if array contains fewer than two elements */
+		if (left >= right)
+			return;
+
+		swapv2(v, left, (left + right)/2);
+		last = left;
+
+		for (i = left+1; i <= right; i++)
+			if (strcmp(v[i], v[left]) < 0)
+				swapv2(v, ++last, i);
+
+		swapv2(v, left, last);
+		qsortv2(v, left, last-1);
+		qsortv2(v, last+1, right);
+}
+
+/* swapv2 : interchange v[i] and v[j] */
+void swapv2 (char** v, signed int i, signed int j)
+{
+		char* temp;
+
+		temp = v[i];
+		v[i] = v[j];
+		v[j] = temp;
 }
