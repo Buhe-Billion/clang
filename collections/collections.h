@@ -1266,6 +1266,13 @@ signed int readlines (char** lineptr,signed int maxlines)
 
 	nlines = 0;
 	while ((len = getline_(line,MAXLEN)) > 0)
+		/* 
+		*
+		*I love how the line below makes the program much shorter
+		*by combining two functions: checking for edge cases/limits
+		*while simultaneously allocating values to variables
+		*
+		*/
 		if (nlines >= maxlines || (p = alloc(len)) == NULL)
 			return -1;
 		else
