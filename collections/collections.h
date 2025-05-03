@@ -1259,7 +1259,7 @@ signed int strcompare (char* s, char* t)
 }
 
 /* readlines: read input lines */
-signed int readlines (char** lineptr,signed int maxlines)
+signed int readlines (char** lineptr, signed int maxlines)
 {
 	signed int len, nlines;
 	char *p, line[MAXLEN];
