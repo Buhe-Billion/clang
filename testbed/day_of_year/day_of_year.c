@@ -24,7 +24,7 @@ int main(int argc, char const *argv[])
 	printf("This is the: %d th day of the year\n", day_of_year(2025, 5, 3));
 
 	month_day(2025, 123, pmonth, pday);
-	printf("The 123rd day of 2025, vandaag, is on: %d th month and on the %d rd day\n", *pmonth, *pday);
+	printf("The 123rd day of 2025, vandaag, is on the %drd day of the %dth month \n", *pday, *pmonth);
 	
 	return 0;
 }
