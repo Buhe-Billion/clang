@@ -82,6 +82,7 @@ void qsortv2 (char**, signed int, signed int);
 void swapv2 (char**, signed int, signed int);
 signed int day_of_year (signed int, signed int, signed int);
 void month_day (signed int, signed int, signed int*, signed int*);
+char* month_name (signed int);
 
 
 
@@ -1367,4 +1368,19 @@ void month_day (signed int year, signed int yearday, signed int* pmonth, signed 
 
 	*pmonth = i;
 	*pday = yearday;
+}
+
+/*month_name: return name of n-th month*/
+char* month_name (signed int n)
+{
+		static char* name[] =
+		{
+			"Illegal month",
+			"Januar", "Februar", "Maerz", "April"
+			"Mai", "Juni", "Juli", "August", 
+			"September", "Oktober", "November",
+			"Dezember"
+		};
+
+		return (n < 1 || n > 12) ? name[0] : name[n];
 }
