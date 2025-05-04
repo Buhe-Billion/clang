@@ -19,6 +19,7 @@
 typedef unsigned char* byte_pointer;
 enum loop {NO, YES};
 enum loop okloop = YES;
+typedef signed int* integer_pointer;
 
 
 /* Function declarations of all the functions we have here */
